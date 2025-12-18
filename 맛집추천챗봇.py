@@ -51,13 +51,14 @@ FINAL_K = 5       # 최종 후보(= next용)
 
 # ✅ 거리(도보시간) 가중치(패널티)
 LAMBDA_DISTANCE = 0.15  # 0~1 권장 (0이면 거리 영향 없음)
-
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_PATH = os.path.join(BASE_DIR, "식당DB_통합_도보추가_최최종수정.csv")
 # =========================
 # CSV 로드 (메타데이터 전용)
 # =========================
 @st.cache_data
 def load_meta_csv():
-    df = pd.read_csv("./식당DB_통합_도보추가_최최종수정.csv")
+    df = pd.read_csv(CSV_PATH)
 
     must_text = ["사업장명", "업태구분명", "대표메뉴_메뉴", "대표메뉴_가격", "지번주소"]
     for c in must_text:
