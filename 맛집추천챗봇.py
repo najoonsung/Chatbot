@@ -31,7 +31,7 @@ if not OPENAI_API_KEY:
 client = OpenAI(api_key=OPENAI_API_KEY)
 
 # ✅ 이미 만들어진 리뷰/감성 임베딩 Chroma DB
-DB_PATH = r"/Users/ijunseong/Downloads/vector_db"
+DB_PATH = r"./vector_db"
 COLLECTION_NAME = "hongdae_restaurants"
 
 embedding_model = OpenAIEmbeddings(
